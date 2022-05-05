@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+    <Head>
+        <meta charset="UTF-8">
+        <title>Information sur l'entreprise</title>
+        <link rel="stylesheet" href="../Style.css">
+    </head>
+<body style="background-color:#808080">
+    <div class="detail">
+    <h1> Détails de l'entreprise </h1>
+    <br />
+
+    <h2> RaisonSociale : </h2>
+    {{ENTREPRISE.ENTRAISONSOCIALE}}
+    <br />
+
+    <h2> Adresse : </h2>
+    {{ENTREPRISE.ENTADRESSE1}} {{ENTREPRISE.ENTADRESSE2}}  {{ENTREPRISE.ENTADRESSE3}} 
+    
+    <br />
+
+    <h2> Ville : </h2>
+    {{ENTREPRISE.ENTVILLE}}
+    <br />
+
+<<<<<<< Updated upstream
+    <h2> CodePostal : </h2>
+    {{ENTREPRISE.ENTCODEPOSTAL}}
+    <br />
+=======
+				<div class="blocpar2">
+					<h2>
+						Option 
+					</h2>
+                    {% for key in OPTION %}
+                        {{key.opt_libelle}}<br />
+                    {% endfor %}
+					<a href="{{path('AjoutOption',{'id':ENTREPRISE.id}) }}">
+						<button type="button" name="AjoutOptions" style="background-color : #C83838">
+							Ajout option
+						</button>
+					</a>
+				</div>
+			</div>
+            <div>
+						<h2>
+							Liste des employés:
+						</h2>
+						{% for key in PERSONNEL %}
+							Nom : {{key.per_nom}}
+							Prenom : {{key.per_prenom}}
+							<a href="{{path('SupprEmploye',{'id': key.id }) }}">
+								<button type="button" name="Supprimer" style="background-color : #C83838">
+									Supprimer l'employé
+                                </button>
+							</a>
+							<br/>
+						{% endfor %}
+						<a href="{{path('PageAjoutEmploye', {'id': ENTREPRISE.Id }) }}">
+							<button style="background-color : #50C880; cursor:pointer; ">Ajouter un employé</button>
+						</a>
+					</div>
+			<br/>
+            <div class="divbouton">
+			<a href="{{path('ModifEnt', {'id': ENTREPRISE.Id }) }}" style="text-decoration:none">
+				<button style="background-color : #E3DF1E; cursor:pointer;">
+                    Modifier l'entreprise
+                </button>
+			</a>
+            
+			<a href="{{path('Supprimer',{'id': ENTREPRISE.id }) }}" >
+				<button type="button" name="Supprimer" style="background-color : #C83838; cursor:pointer">
+					Supprimer l'entreprise
+                </button>
+			</a>
+            </div>
+			<a href="{{ path('Index') }}">
+				<button style="background-color : #C83838; cursor:pointer">Retour</button>
+			</a>
+           
+		</div>
+>>>>>>> Stashed changes
+
+    <h2> Pays : </h2>
+     {{ENTREPRISE.ENTPAYS}}
+    <br />
+
+    <h2> Liste des employés: </h2>
+    {% for key in PERSONNEL %}
+
+    Nom {{key.per_nom}} Prenom : {{key.per_prenom}}<br/>
+        
+    {% endfor %}
+    <br />
+    <a href="{{path('ModifEnt', {'id': ENTREPRISE.Id }) }}"> <button>Modifier</button></a>
+    <a href="{{path('Supprimer',{'id': ENTREPRISE.id }) }}" style="text-decoration:none;"><button type="button" name="Supprimer"> Supprimer l'entreprise</button></a>
+    </div>
+
+</body>
+</html>

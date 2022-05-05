@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+    <Head>
+        <meta charset="UTF-8">
+        <title>Modification d'une entreprise</title>
+        <link rel="stylesheet" href="../Style.css">
+    </head>
+<body style="background-color:#808080">
+<body>
+    <h1> Formulaire de modification d'une entreprise </h1>
+    <form action="{{ path('post_modif',{'id' : ENTREPRISE.id }) }}" method="POST">
+        <tr>
+            <td> Raison sociale : </td>
+            <td><input type ="text" name ="RaisonSociale" required value={{ENTREPRISE.ENTRAISONSOCIALE}}></td><br />
+        </tr>
+        <br />
+        <tr>
+            <td> Adresse :</td>
+            <td><input type ="text" name ="Adresse" required value={{ENTREPRISE.ENTADRESSE1}}></td><br />
+        </tr>
+        <br />
+        <tr>
+            <td> Adresse 2 :</td>
+            <td><input type ="text" name ="Adresse2" value={{ENTREPRISE.ENTADRESSE2}}></td><br />
+        </tr>
+        <br />
+        <tr>
+            <td> Adresse 3 :</td>
+            <td><input type ="text" name ="Adresse3" value={{ENTREPRISE.ENTADRESSE3}}></td><br />
+        </tr>
+        <br />
+        <tr>
+            <td> Ville : </td>
+            <td><input type ="text" name ="Ville" required value={{ENTREPRISE.ENTVILLE}}></td><br />
+        </tr>
+        <br />
+        <tr>
+            <td> Code Postal : </td>
+            <td><input type ="number" name ="CP" required value={{ENTREPRISE.ENTCODEPOSTAL}}></td><br />
+        </tr>
+        <br />
+        <tr>
+            <td> Pays :</td>
+            <td><input type ="text" name ="Pays" required value={{ENTREPRISE.ENTPAYS}}></td><br />
+        </tr>
+        <br />
+        <tr>
+            <td><input type ="submit" name = "Envoyer" value ="Enregistrer"></td>
+        </tr>
+    </form>
+</body>

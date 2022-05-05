@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+	<Head>
+		<meta charset="UTF-8">
+		<title>Ajout d'un utilisateur</title>
+		<link rel="stylesheet" href="../Style.css">
+	</head>
+	<body style="background-color:#808080"></body>
+	<body>
+		<h1>
+			Formulaire d'ajout d'un utilisateur
+		</h1>
+		<form action="{{ path('post_utilisateur') }}" method="POST">
+			<tr>
+				<td>
+					Login :
+				</td>
+				<td><input type="text" name="Login" required></td><br/>
+			</tr>
+			<br/>
+			<tr>
+				<td>
+					Mot de passe :</td>
+				<td><input type="password" name="MDP" required></td><br/>
+			</tr>
+			<br/>
+			<tr>
+				<td>
+					Role :</td>
+				<td>
+					<select name="Role" style="width:150px">
+						<option value="E">Enseignants</option>
+						<option value="SA">Super Administrateur</option>
+					</select>
+				</td>
+				<br/>
+			</tr>
+			<br/>
+			<tr>
+				<td><input type="submit" name="Envoyer" value="Enregistrer"></td>
+			</tr>
+		</form>
+	</body>
+</html>

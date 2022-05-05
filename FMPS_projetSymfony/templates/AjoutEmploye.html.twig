@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+    <Head>
+        <meta charset="UTF-8">
+        <title>Ajout d'un employé</title>
+        <link rel="stylesheet" href="../Style.css">
+    </head>
+<body style="background-color:#808080">
+<body>
+    <h1> Formulaire d'ajout d'un employé </h1>
+    <form action="{{ path('post_employe') }}" method="POST">
+        <tr>
+            <td> Nom : </td>
+            <td><input type ="text" name ="Nom" required></td><br />
+        </tr>
+        <br />
+        <tr>
+            <td> Prenom :</td>
+            <td><input type ="text" name ="Prenom" required></td><br />
+        </tr>
+        <br />
+        <tr>
+            <td> Genre :</td>
+            <td><input type ="text" name ="Genre" required></td><br />
+        </tr>
+        <br />
+        <tr>
+            <td> Mail :</td>
+            <td><input type ="text" name ="Mail" required></td><br />
+        </tr>
+        <br />
+        <tr>
+            <td> Telephone : </td>
+            <td><input type ="text" name ="Telephone" required></td><br />
+        </tr>
+        <br />
+        <tr>
+            <td> Metier : </td>
+            <td><input type ="text" name ="Metier" required></td><br />
+        </tr>
+        <br />
+        <tr>
+            <td><input type ="submit" name = "Envoyer" value ="Enregistrer"></td>
+        </tr>
+    </form>
+</body>

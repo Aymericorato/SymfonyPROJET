@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> La Chataîgneraie </title>
+        <link rel="stylesheet" href="../Style.css">
+    </head>
+<body style="background-color:#808080">
+<div align="center">
+<img src="../Logo-removebg-preview.png" height="100" width="270" />
+
+    <div>
+        <h1>{% block h1 %}Liste entreprise{% endblock %}</h1>
+        <h2>{% block h2 %}Veuillez choisir une entreprise{% endblock %}</h2>
+    </div>
+        {% for entreprise in ENTREPRISE %}
+        
+        <a class="lieninfo" href="{{path('Detail', {'id':entreprise.Id }) }}">
+        <div class="infoentreprise">
+        {{entreprise.ENTRAISONSOCIALE}} <br> Code Postal : {{entreprise.ENTCODEPOSTAL}}
+        </div>
+        </a>
+        {% endfor %}
+        </div>
+    </div>
+<div class="bouton" align="center">
+    <a href="{{ path('AjoutEntreprise') }}"><button>Ajouter</button></a>
+</div>
+</body>
+</html>

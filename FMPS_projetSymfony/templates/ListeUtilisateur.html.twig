@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> La Chataîgneraie </title>
+        <link rel="stylesheet" href="../Style.css">
+    </head>
+<body style="background-color:#808080">
+<div align="center">
+<img src="../Logo-removebg-preview.png" height="100" width="270" />
+
+    <div>
+        <h1>{% block h1 %}Liste des utilisateur{% endblock %}</h1>
+        <h2>{% block h2 %}Veuillez choisir un utilisateur{% endblock %}</h2>
+    </div>
+        {% for utilisateur in Utilisateurs %}
+
+        
+        <div class="infoentreprise">
+        {{utilisateur.UTILLOGIN}}
+        <a href="{{path('ModifUtil', {'id':utilisateur.Id }) }}"> <button>Modifier</button></a>
+          <a href="{{path('SupprimUtil',{'id': utilisateur.id }) }}" style="text-decoration:none;"><button type="button" name="Supprimer"> Supprimer l'utilisateur</button></a>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+<div class="bouton" align="center">
+    <a href="{{ path('Utilisateur') }}"><button>Ajouter</button></a>
+</div>
+</body>
+</html>

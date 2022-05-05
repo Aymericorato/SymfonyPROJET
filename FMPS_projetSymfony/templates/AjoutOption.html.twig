@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+	<Head>
+		<meta charset="UTF-8">
+		<title>Ajout d'une option</title>
+		<link rel="stylesheet" href="../Style.css">
+	</head>
+	<body style="background-color:#00799B"></body>
+	<p>Bonjour
+		{{app.session.get('login')}}
+		({{ app.session.get('role')}})
+	</p>
+	<div class = "deco">
+        <a href="{{ path('login') }}"><button style = "background-color : #CF5E5E">Déconnexion</button></a>
+	</div>
+
+	<h1>
+		Formulaire d'ajout d'une option
+	</h1>
+	<form action="{{ path('post_AjoutOption', {"id" : ENTREPRISE.id }) }}" method="POST">
+		<tr>
+			<td>
+				Option(s) :<br />
+                {% for key in OPTIONS %}
+                    <input type="checkbox" name="Options[]" value="{{ key.id }}">{{ key.optlibelle }}<br />
+                {% endfor %}
+			</td>
+            <td>
+		</tr>
+        <br />
+		<tr>
+			<td><input type="submit" name="Envoyer" value="Enregistrer" style="background-color : #1EAFE3"></td>
+		</tr>
+	</form>
+	<a href="{{ path('ListeUtilisateur')}}">
+		<button style="background-color : #C83838">Retour</button>
+	</a>
+</html></body></html>

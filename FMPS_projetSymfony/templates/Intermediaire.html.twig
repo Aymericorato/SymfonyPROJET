@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Intermédiaire | La Chataîgneraie </title>
+        <link rel="stylesheet" href="../Style.css">
+    </head>
+<body style="background-color:#808080">
+<div align="center">
+    <img src="Logo-removebg-preview.png" height="100" width="300" />
+    <div id="content">
+        <h2>{% block h2 %} Veuillez choisir {% endblock %}</h2>
+    </div>
+        <br />
+            <div class="agrandir">
+        <a href="{{path('Index')}}"><button type="button" value="Entreprises" class="boutton">Entreprises</button></a>
+        <br />
+        <a href ="{{path('ListeUtilisateur')}}"><button type="button" value="Enseignants" class="boutton">Enseignants</button></div></a>
+</div>
+</body>
+</html>
